@@ -550,10 +550,15 @@ function! <SID>RenderSyntax()
 
     if !exists("g:did_minibufexplorer_syntax_inits")
       let g:did_minibufexplorer_syntax_inits = 1
-      hi def link MBENormal                Comment
-      hi def link MBEChanged               String
-      hi def link MBEVisibleNormal         Special
-      hi def link MBEVisibleChanged        Special
+      hi MBENormal term=bold ctermfg=46 gui=bold guifg=#ffff60
+      hi MBEVisibleNormal term=bold ctermfg=231 ctermbg=22 gui=bold guifg=#ffff60
+      hi MBEChanged term=reverse cterm=bold ctermfg=232 ctermbg=215 gui=reverse
+      hi MBEVisibleChanged term=standout cterm=bold ctermfg=16 ctermbg=202 guifg=Red
+      " hi def link MBENormal                Comment
+      " hi def link MBEChanged               String
+      " hi def link MBEVisibleNormal         Special
+      " hi def link MBEVisibleChanged        Special
+      " TODO
       hi def link MBEVisibleActiveNormal   Underlined
       hi def link MBEVisibleActiveChanged  Error
     endif
